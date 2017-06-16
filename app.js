@@ -21,6 +21,8 @@ app.use(express.static(__dirname + '/public'));
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 
+console.log('Finished initializaitons....');
+
 // start server on the specified port and binding host
 app.listen(appEnv.port, '0.0.0.0', function() {
 
@@ -54,6 +56,9 @@ app.post('/webhook', (req, res) => {
 const request = require('request');
 
 function sendMessage(event) {
+	
+  console.log('entered the sendMessage() function');
+	
   "use strict";
   let sender = event.sender.id;
   let text = event.message.text;
@@ -67,6 +72,9 @@ function sendMessage(event) {
       message: {text: text}
     }
   }, function (error, response) {
+    
+    console.log('Entered last function for some reason..');
+    
     if (error) {
         console.log('Error sending message: ', error);
     } else if (response.body.error) {
