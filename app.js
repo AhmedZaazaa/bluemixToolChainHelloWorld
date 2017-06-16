@@ -54,6 +54,7 @@ app.post('/webhook', (req, res) => {
 const request = require('request');
 
 function sendMessage(event) {
+  "use strict";
   let sender = event.sender.id;
   let text = event.message.text;
 
