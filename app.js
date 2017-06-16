@@ -64,8 +64,8 @@ function sendMessage(event) {
   let text = event.message.text;
 
   request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token: 'EAACwHGVDi1sBAJvOo8jWEDKfZBYpjsqqGguJg4ZAXsOj5aAnPU2NslXmRzsi4lf6RJ110yvaEnZAwxhmqcHSqQHTZCYHD99Gafbu2h2NU2OpiwRqRAXvYWOpnPZC8YYh99JgBNJ9aQxOdxD3O8vKDRaplhnAAJ18wCdWB8bnNlgZDZD'},
+    url: 'https://graph.facebook.com/v2.9/me/messages',
+    qs: {access_token: 'EAACwHGVDi1sBALg3XhiG2ucTjMZAw7e2gU8vKtAlvUqRZAWvFq5kd3NSh9HYEYZCOoIyGzcYkBKolWAxwETtxR28YANA4v0FdKeSEOtZA4mGyGjG56xLbRZBOzWRt2K4oZBF2TLPJOWHXxnjr82CLpQazGjwFC5jULdBoe3eNCxgZDZD'},
     method: 'POST',
     json: {
       recipient: {id: sender},
