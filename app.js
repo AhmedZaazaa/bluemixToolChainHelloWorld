@@ -34,7 +34,7 @@ app.get('/webhook', (req, res) => {
 /* Handling all messenges */
 app.post('/webhook', (req, res) => {
   console.log("de el post method.");
-  console.log("request: " + req);
+  console.log("request: " + JSON.stringify(req));
   console.log("request.body:" + req.body);
   if (req.body.object === 'page') {
     req.body.entry.forEach((entry) => {
