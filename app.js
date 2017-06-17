@@ -23,13 +23,6 @@ var appEnv = cfenv.getAppEnv();
 
 console.log('Finished initializaitons....');
 
-// start server on the specified port and binding host
-app.listen(appEnv.port, '0.0.0.0', function() {
-
-	// print a message when the server starts listening
-  console.log("server starting on " + appEnv.url);
-});
-
 app.get('/webhook', (req, res) => {
   if (req.query['hub.mode'] && req.query['hub.verify_token'] === 'tuxedo_cat') {
     res.status(200).send(req.query['hub.challenge']);
@@ -84,3 +77,10 @@ function sendMessage(event) {
     }
   });
 }
+
+// start server on the specified port and binding host
+app.listen(appEnv.port, '0.0.0.0', function() {
+
+	// print a message when the server starts listening
+  console.log("server starting on " + appEnv.url);
+});
