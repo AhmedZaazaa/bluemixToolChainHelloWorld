@@ -18,6 +18,9 @@ var app = express();
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
 
+app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.json());
+
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
 
