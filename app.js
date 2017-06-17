@@ -35,8 +35,6 @@ app.get('/webhook', (req, res) => {
 /* Handling all messenges */
 app.post('/webhook', (req, res) => {
   console.log("de el post method.");
-  console.log("request: ");
-  console.log(req);
   console.log("request.body:");
   console.log(req.body);
   if (req.body.object === 'page') {
@@ -63,7 +61,7 @@ function sendMessage(event) {
 
   request({
     url: 'https://graph.facebook.com/v2.9/me/messages',
-    qs: {access_token: 'EAAaC5ZACzEVUBANMsgKqVkG45nvZCVHbQjMqGU9KRd7JZAyiqhZCuKZAgdedM5cJS2etOBauF3Th4sJJxnzgZBFJ1SMjK1FahHI4ftGcDLp6Fuo7zuj5xVvHY4LVzbBIxhPJ5jA8MbnyAk5sUb5VJlN5cs7gFJM9UQHR4OHydTyAZDZD'},
+    qs: {access_token: 'EAAaC5ZACzEVUBANZAIkZCivDCEEW7Cb9tQXTKbuwoRTfLB8K3mJaQ1JrcwrPb32VVUW5TxDldEVhphHeLR9jjzcIytdz3s3AWNgxoximSNrZB7X3uKqTXearWt1FfO1xgRW8DxSzZA1ZC2XoPMWYZByZAtLlT8dH8E2zHFMnkZAHNEQZDZD'},
     method: 'POST',
     json: {
       recipient: {id: sender},
